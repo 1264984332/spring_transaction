@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.transaction2.dao.AccountDao">
+	<update id="reduceAccount">
+		update 	account
+		set money = money - #{1,jdbcType=DOUBLE}
+		where name = #{0,jdbcType=VARCHAR}
+	</update>
+	<update id="addAccount">
+		update 	account
+		set money = money + #{1,jdbcType=DOUBLE}
+		where name = #{0,jdbcType=VARCHAR}
+	</update>
+</mapper>
